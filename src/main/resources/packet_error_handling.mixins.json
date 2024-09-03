@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "uk.u32.packeterrorhandling.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"ClientConnectionMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
