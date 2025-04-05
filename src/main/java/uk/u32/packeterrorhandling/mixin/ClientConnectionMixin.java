@@ -46,9 +46,9 @@ public abstract class ClientConnectionMixin extends SimpleChannelInboundHandler<
     public void handleException(Packet<?> packet, Throwable ex) {
         if (packet.isWritingErrorSkippable()) {
             if (!LOGGER.isDebugEnabled()) {
-                LOGGER.warn(String.format("Failed to send packet %s, skipping", packet.getPacketId()));
+                LOGGER.warn("Failed to send packet {}, skipping", packet.getPacketType().toString());
             } else {
-                LOGGER.warn(String.format("Failed to send packet %s, skipping", packet.getPacketId()), ex);
+                LOGGER.warn("Failed to send packet {}, skipping", packet.getPacketType().toString(), ex);
             }
         } else {
             this.exceptionCaught(null, ex);
